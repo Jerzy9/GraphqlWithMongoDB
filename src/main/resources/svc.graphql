@@ -1,0 +1,18 @@
+schema {
+    query: Query
+}
+
+type Query {
+    allSvc: [Svc]
+    svc(id: String): Svc
+}
+
+type Svc {
+    id: ID
+    name: String
+    description: String
+    price: Float
+    imgUrl: String
+
+}
+
