@@ -3,6 +3,7 @@ package com.example.demo.model;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
 import org.springframework.data.annotation.Id;
 import org.springframework.stereotype.Component;
 
@@ -12,14 +13,14 @@ import java.util.UUID;
 public class Svc {
 
     @Id
-    private UUID id;
+    private String id;
     private String name;
     private String description;
     private double price;
     private String imgUrl;
 
     @Autowired
-    public Svc(UUID id, String name, String description, double price, String imgUrl) {
+    public Svc(String id, String name, String description, double price, String imgUrl) {
         this.id = id;
         this.name = name;
         this.description = description;
@@ -27,11 +28,11 @@ public class Svc {
         this.imgUrl = imgUrl;
     }
 
-    public UUID getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(UUID id) {
+    public void setId(String id) {
         this.id = id;
     }
 

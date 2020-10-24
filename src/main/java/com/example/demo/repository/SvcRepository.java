@@ -10,7 +10,7 @@ public interface SvcRepository {
 
     List<Svc> getAllSvc();
 
-    Optional<Svc> getSvcById(UUID id);
+    Optional<Svc> getSvcById(String id);
 
     int deleteSvcById(UUID id);
 }

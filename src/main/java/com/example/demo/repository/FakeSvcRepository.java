@@ -3,14 +3,15 @@ package com.example.demo.repository;
 import com.example.demo.model.Svc;
 import org.springframework.stereotype.Repository;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Optional;
-import java.util.UUID;
+import java.util.*;
 
 @Repository("fake")
 public class FakeSvcRepository implements SvcRepository {
-    private List<Svc> listOfSvc = new ArrayList<>();
+    private List<Svc> listOfSvc = Arrays.asList(
+            new Svc("1", "name", "disc", 2, "d"),
+            new Svc("1", "name", "disc", 2, "d")
+    );
+
 
     @Override
     public List<Svc> getAllSvc() {
@@ -18,7 +19,7 @@ public class FakeSvcRepository implements SvcRepository {
     }
 
     @Override
-    public Optional<Svc> getSvcById(UUID id) {
+    public Optional<Svc> getSvcById(String id) {
         return listOfSvc.stream().filter(svc -> svc.getId().equals(id)).findFirst();
     }
 
